@@ -1,0 +1,9 @@
+#! /bin/bash
+
+# To get token, go to github -> settings -> developer settings -> Person access tokens -> generate new token
+# Despite it coming after user username flag, it's a series of numbers.
+ 
+TOKEN=""
+for i in `curl -u username:$TOKEN https://api.github.com/user/repos?per_page=100 | grep ssh_url | cut -d ':' -f 2-3|tr -d '",'`; do git clone $i; done
+
+rename 'y/A-Z/a-z/' *

@@ -1,0 +1,4 @@
+
+
+# to get the number of files in a directory (used to make sure you have the right number of repos cloned)
+ls -1 | wc -l
